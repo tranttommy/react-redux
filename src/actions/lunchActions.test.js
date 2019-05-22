@@ -6,7 +6,7 @@ import {
   removeSandwiches,
   removeChips,
   cancelLunch
-} from './reduxActions';
+} from './lunchActions';
 
 describe('redux actions', () => {
   it('creates addDrink action object', () => {
@@ -31,19 +31,19 @@ describe('redux actions', () => {
   });
 
   it('creates removeDrinks action object', () => {
-    expect(removeDrinks('hello')).toEqual({
+    expect(removeDrinks()).toEqual({
       type: 'REMOVE_DRINKS'
     });
   });
 
   it('creates removeSandwiches action object', () => {
-    expect(removeSandwiches('hello')).toEqual({
+    expect(removeSandwiches()).toEqual({
       type: 'REMOVE_SANDWICHES'
     });
   });
 
   it('creates removeChips action object', () => {
-    expect(removeChips('hello')).toEqual({
+    expect(removeChips()).toEqual({
       type: 'REMOVE_CHIPS'
     });
   });

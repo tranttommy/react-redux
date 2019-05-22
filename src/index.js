@@ -1,5 +1,5 @@
 import { createStore } from 'redux';
-import reducer from './reduxReducer';
+import reducer from './reducers/lunchReducer';
 import {
   addDrink,
   addSandwich,
