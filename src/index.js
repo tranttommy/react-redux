@@ -1,86 +1,43 @@
 import { createStore } from 'redux';
+import reducer from './reduxReducer';
+import {
+  addDrink,
+  addSandwich,
+  addChip,
+  removeDrinks,
+  removeSandwiches,
+  cancelLunch,
+  removeChips
+} from './reduxActions';
 
-const initialState = {
-  sandwiches: [],
-  drinks: [],
-  chips: []
-};
+export const store = createStore(reducer);
 
-function reducer(state = initialState, action) {
-  switch(action.type) {
-    case 'ADD_DRINK':
-      return { ...state, drinks: [...state.drinks, action.payload] };
-    case 'REMOVE_DRINKS':
-      return { ...state, drinks: [] };
-    case 'ADD_SANDWICH':
-      return { ...state, sandwiches: [...state.sandwiches, action.payload] };
-    case 'REMOVE_SANDWICHES':
-      return { ...state, sandwiches: [] };
-    case 'ADD_CHIP':
-      return { ...state, chips: [...state.chips, action.payload] };
-    case 'REMOVE_CHIPS':
-      return { ...state, chips: [] };
-    case 'CANCEL_LUNCH':
-      return initialState;
-    default:
-      return state;
-  }
-}
-
-const store = createStore(reducer);
-
-store.dispatch({
-  type: 'ADD_DRINK',
-  payload: 'soda'
-});
+store.dispatch(addDrink('soda'));
 console.log('1 drink', store.getState());
 
-store.dispatch({
-  type: 'ADD_DRINK',
-  payload: 'juice'
-});
+store.dispatch(addDrink('juice'));
 console.log('2 drinks', store.getState());
 
-store.dispatch({
-  type: 'ADD_SANDWICH',
-  payload: 'tuna'
-});
+store.dispatch(addSandwich('tuna'));
 console.log('1 sandwich', store.getState());
 
-store.dispatch({
-  type: 'ADD_SANDWICH',
-  payload: 'lgbt'
-});
+store.dispatch(addSandwich('lgbt'));
 console.log('2 sandwiches', store.getState());
 
-store.dispatch({
-  type: 'CANCEL_LUNCH'
-});
+store.dispatch(cancelLunch());
 console.log('no nothing', store.getState());
 
-store.dispatch({
-  type: 'ADD_CHIP',
-  payload: 'crunchy'
-});
+store.dispatch(addChip('crunchy'));
 console.log('1 chip', store.getState());
 
-store.dispatch({
-  type: 'ADD_CHIP',
-  payload: 'cool ranch'
-});
+store.dispatch(addChip('cool ranch'));
 console.log('2 chips', store.getState());
 
-store.dispatch({
-  type: 'REMOVE_DRINKS'
-});
+store.dispatch(removeDrinks());
 console.log('no drinks', store.getState());
 
-store.dispatch({
-  type: 'REMOVE_SANDWICHES'
-});
+store.dispatch(removeSandwiches());
 console.log('no sandwiches', store.getState());
 
-store.dispatch({
-  type: 'REMOVE_CHIPS'
-});
+store.dispatch(removeChips());
 console.log('no chips', store.getState());
