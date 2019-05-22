@@ -20,6 +20,8 @@ function reducer(state = initialState, action) {
       return { ...state, chips: [...state.chips, action.payload] };
     case 'REMOVE_CHIPS':
       return { ...state, chips: [] };
+    case 'CANCEL_LUNCH':
+      return initialState;
     default:
       return state;
   }
@@ -50,6 +52,11 @@ store.dispatch({
   payload: 'lgbt'
 });
 console.log('2 sandwiches', store.getState());
+
+store.dispatch({
+  type: 'CANCEL_LUNCH'
+});
+console.log('no nothing', store.getState());
 
 store.dispatch({
   type: 'ADD_CHIP',
