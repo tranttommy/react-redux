@@ -6,7 +6,7 @@ import {
   REMOVE_SANDWICHES,
   REMOVE_CHIPS,
   CANCEL_LUNCH
-} from './reduxActions';
+} from '../actions/lunchActions';
 
 const initialState = {
   sandwiches: [],
