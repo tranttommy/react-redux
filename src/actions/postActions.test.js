@@ -1,6 +1,6 @@
-import { createPost, deletePost } from './postActions';
+import { createPost, deletePost, updatePost } from './postActions';
 
-describe('postActions', () => {
+describe('postActions', () => {  
   it('returns createPost action', () => {
     const post = {
       id: 1,
@@ -21,6 +21,21 @@ describe('postActions', () => {
   it('returns deletePost action', () => {
     expect(deletePost()).toEqual({
       type: 'DELETE_POST'
+    });
+  });
+
+  it('returns updatePost action', () => {
+    const newPost = {
+      id: 1,
+      body: 'My cool body.'
+    };
+
+    expect(updatePost(newPost)).toEqual({
+      type: 'UPDATE_POST',
+      payload: {
+        id: 1,
+        body: 'My cool body.'
+      }
     });
   });
 });
