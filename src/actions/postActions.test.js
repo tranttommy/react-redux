@@ -1,4 +1,4 @@
-import { createPost } from './postActions';
+import { createPost, deletePost } from './postActions';
 
 describe('postActions', () => {
   it('returns createPost action', () => {
@@ -15,6 +15,12 @@ describe('postActions', () => {
         title: 'My Cool Post',
         body: 'Cool post body'
       }
+    });
+  });
+
+  it('returns deletePost action', () => {
+    expect(deletePost()).toEqual({
+      type: 'DELETE_POST'
     });
   });
 });

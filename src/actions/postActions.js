@@ -8,3 +8,7 @@ export const createPost = post => ({
   }
 });
 
+export const DELETE_POST = 'DELETE_POST';
+export const deletePost = () => ({
+  type: DELETE_POST
+});
