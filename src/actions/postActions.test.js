@@ -19,8 +19,9 @@ describe('postActions', () => {
   });
 
   it('returns deletePost action', () => {
-    expect(deletePost()).toEqual({
-      type: 'DELETE_POST'
+    expect(deletePost(4)).toEqual({
+      type: 'DELETE_POST',
+      payload: 4
     });
   });
 
