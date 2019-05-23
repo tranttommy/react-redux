@@ -28,6 +28,7 @@ describe('postActions', () => {
   it('returns updatePost action', () => {
     const newPost = {
       id: 1,
+      title: 'My cool title',
       body: 'My cool body.'
     };
 
@@ -35,6 +36,7 @@ describe('postActions', () => {
       type: 'UPDATE_POST',
       payload: {
         id: 1,
+        title: 'My cool title',
         body: 'My cool body.'
       }
     });

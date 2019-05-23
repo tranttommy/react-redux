@@ -11,7 +11,7 @@ export const deletePost = id => ({
 });
 
 export const UPDATE_POST = 'UPDATE_POST';
-export const updatePost = ({ id, body }) => ({
+export const updatePost = ({ id, title, body }) => ({
   type: UPDATE_POST,
-  payload: { id, body }
+  payload: { id, title, body }
 });

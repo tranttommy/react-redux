@@ -1,5 +1,5 @@
 import postReducer from './postReducer';
-import { createPost, deletePost } from '../actions/postActions';
+import { createPost, deletePost, updatePost } from '../actions/postActions';
 
 
 describe('postReducer', () => {
@@ -68,6 +68,62 @@ describe('postReducer', () => {
         body: 'Bady'
       },
       {
+        id: 2,
+        title: 'Tittle',
+        body: 'Boddy'
+      }
+    ]);
+  });
+
+  it('returns new state with updated post', () => {
+    const initialState = [
+      {
+        id: 3,
+        title: 'Title',
+        body: 'Body'
+      }, {
+        id: 4,
+        title: 'My Title',
+        body: 'My body'
+      }, {
+        id: 2,
+        title: 'Tittle',
+        body: 'Boddy'
+      }
+    ];
+
+    const newPost = {
+      id: 4,
+      title: 'My Cool Title',
+      body: 'My Cool Body'
+    };
+
+    const newState = postReducer(initialState, updatePost(newPost));
+    expect(initialState).toEqual([
+      {
+        id: 3,
+        title: 'Title',
+        body: 'Body'
+      }, {
+        id: 4,
+        title: 'My Title',
+        body: 'My body'
+      }, {
+        id: 2,
+        title: 'Tittle',
+        body: 'Boddy'
+      }
+    ]);
+    expect(newState).toEqual([
+      {
+        id: 3,
+        title: 'Title',
+        body: 'Body'
+      }, {
+        id: 4,
+        title: 'My Cool Title',
+        body: 'My Cool Body'
+      }, {
         id: 2,
         title: 'Tittle',
         body: 'Boddy'
