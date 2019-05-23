@@ -60,7 +60,7 @@ describe('postReducer', () => {
         title: 'Tittle',
         body: 'Boddy'
       }
-    ])
+    ]);
     expect(newState).toEqual([
       {
         id: 4,
