@@ -5,7 +5,7 @@ import Post from './Post';
 export default function Posts({ posts, deletePost }) {
   const postList = posts.map(post => (
     <li key={post.id}>
-      <Post post={post} deletePost={() => deletePost(post.id)} />
+      <Post post={post} deletePost={deletePost} />
     </li>
   ));
 
