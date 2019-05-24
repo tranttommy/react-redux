@@ -1,7 +1,9 @@
+import shortid from 'shortid';
+
 export const CREATE_POST = 'CREATE_POST';
-export const createPost = ({ id, title, body }) => ({
+export const createPost = ({ title, body }) => ({
   type: CREATE_POST,
-  payload: { id, title, body }
+  payload: { id: shortid.generate(), title, body }
 });
 
 export const DELETE_POST = 'DELETE_POST';

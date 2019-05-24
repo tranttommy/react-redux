@@ -1,26 +1,42 @@
 import postReducer from './postReducer';
 import { createPost, deletePost, updatePost } from '../actions/postActions';
 
-
 describe('postReducer', () => {
   it('returns new state with create post', () => {
     const initialState = [];
     const post = {
-      id: 3,
       title: 'Title',
       body: 'Body'
     };
-
     const newState = postReducer(initialState, createPost(post));
 
     expect(initialState).toEqual([]);
     expect(newState).toEqual([
       {
-        id: 3,
+        id: expect.any(String),
         title: 'Title',
         body: 'Body'
       }
     ]);
+
+    const newPost = {
+      title: 'Tatle',
+      body: 'Bady'
+    };
+    const newerState = postReducer(newState, createPost(newPost));
+
+    expect(newerState).toEqual([
+      {
+        id: expect.any(String),
+        title: 'Title',
+        body: 'Body'
+      },
+      {
+        id: expect.any(String),
+        title: 'Tatle',
+        body: 'Bady'
+      }
+    ])
   });
 
   it('returns new state with deleted post', () => {
