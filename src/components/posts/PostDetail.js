@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CommentsByPostId from '../../containers/comments/CommentsByPostId';
+import CreateComment from '../../containers/comments/CreateComment';
 
 export default function PostDetail({ post }) {
   return (
@@ -8,6 +9,7 @@ export default function PostDetail({ post }) {
       <h1>{post.title}</h1>
       <p>{post.body}</p>
       <CommentsByPostId postId={post.id} />
+      <CreateComment postId={post.id} />
     </section>
   );
 }
