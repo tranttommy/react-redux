@@ -13,8 +13,8 @@ export default function App() {
     <Router>
       <Link to="/">Home</Link>
       <Switch>
-        <Route exact path ="/" component={Home} />
         <Route path="/posts/:id" component={PostById} />
+        <Route path ="/" component={Home} />
       </Switch>
     </Router>
   );
