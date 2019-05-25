@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import CommentsByPostId from '../../containers/comments/CommentsByPostId';
 
 export default function PostDetail({ post }) {
   return (
     <section>
       <h1>{post.title}</h1>
       <p>{post.body}</p>
+      <CommentsByPostId postId={post.id} />
     </section>
   );
 }
