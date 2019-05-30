@@ -7,7 +7,7 @@ describe('commentActions', () => {
       body: 'You succckkksss'
     };
 
-    expect(addComment(comment)).toEqual({
+    expect(addComment(comment.postId, comment.body)).toEqual({
       type: 'ADD_COMMENT',
       payload: {
         postId: 4,

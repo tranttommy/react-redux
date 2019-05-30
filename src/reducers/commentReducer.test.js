@@ -8,7 +8,7 @@ describe('commentReducer', () => {
       postId: 23,
       body: 'Helloe'
     };
-    const newState = commentReducer(initialState, addComment(comment));
+    const newState = commentReducer(initialState, addComment(comment.postId, comment.body));
     expect(initialState).toEqual({});
     expect(newState).toEqual({
       '23': ['Helloe']
